@@ -1,10 +1,11 @@
-package com.example.test1
+package com.example.calculator
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.example.calculator.R
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -76,6 +77,42 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 state = 3
                 addDigit(-1)  // Kết quả
             }
+            R.id.btnC -> {
+                clearAll()  // Xóa toàn bộ
+            }
+            R.id.btnCE -> {
+                clearEntry()  // Xóa số hiện tại
+            }
+            R.id.btnBS -> {
+                backspace()  // Xóa ký tự cuối
+            }
+        }
+    }
+
+    fun clearAll() {
+        op1 = 0
+        op2 = 0
+        state = 1
+        op = 0
+        textResult.text = "0"
+    }
+
+    fun clearEntry() {
+        if (state == 2) {
+            op2 = 0
+        } else {
+            op1 = 0
+        }
+        textResult.text = "0"
+    }
+
+    fun backspace() {
+        if (state == 1) {
+            op1 = op1 / 10
+            textResult.text = "$op1"
+        } else if (state == 2) {
+            op2 = op2 / 10
+            textResult.text = "$op2"
         }
     }
 
