@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btn3 -> addDigit(3)
             R.id.btn4 -> addDigit(4)
             R.id.btn5 -> addDigit(5)
-            R.id.btn6 -> addDigit(6)  // Sửa lại từ bt6 thành btn6
+            R.id.btn6 -> addDigit(6)  
             R.id.btn7 -> addDigit(7)
             R.id.btn8 -> addDigit(8)
             R.id.btn9 -> addDigit(9)
